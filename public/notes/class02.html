@@ -14,20 +14,21 @@
     <div class="slides">
       <section class="hero condensed">
         <h1>Class <span class="red">#02</span></h1>
-        <h1 class="lesson-title">Data Types and Arrays</h1>
+        <h1 class="lesson-title">Variable, Data Types and Arrays</h1>
       </section>
 
       <section data-background="#FFF" class="text-left">
         <div class="heading">Agenda</div>
-        <p>&#149; <a href="#/q-f">Questions\Feedback</a></p>
-        <p>&#149; <a href="#/data-types">Data Types</a></p>
+       <!--  <p>&#149; <a href="#/q-f">Questions\Feedback</a></p> -->
+      
         <p>&#149; <a href="#/variables">Variables</a></p>
+        <p>&#149; <a href="#/data-types">Data Types</a></p>
         <p>&#149; <a href="#/arrays">Arrays</a></p>
         <p>&#149; <a href="#/array-helper-methods">Array helper methods</a></p>
         <p>&#149; <a href="#/array-iteration">Array iteration</a></p>
       </section>
 
-      <section data-background="#FFF" class="text-left">
+<!--       <section data-background="#FFF" class="text-left">
           <div class="heading" id="q-f">Questions\Feedback\Announcements - 5min</div>
           <p class="fragment"><b>Questions...</b></p>
           <div class="text-smallest">
@@ -44,10 +45,10 @@
             <div class="text-smallest">
     <p class="fragment">Several JS Cheatsheets pinned to slack channel.</p>
             </div>
-        </section>
-
+        </section> -->
+<!-- 
       <section data-background="#FFF" class="text-left">
-        <div class="heading">Review - 10min</div>
+        <div class="heading">Review</div>
         <div>
           <p> Pseudocode Best Practices</p> 
           <div class="text-smallest pad-left-lg">
@@ -63,12 +64,11 @@
       <section data-background="#FFF" class="text-left">
         <div class="heading">Pseudocode Exercise - 10min</div>
            <div class="text-smallest pad-left-lg">
-          <p class="fragment">&#149; Using the desks as a whiteboard....</p>
-          <p class="fragment">&#149; Write the steps that adds together a list of numbers and then informs the user if the total is a positive or negative number.</p>
-          <p class="fragment">&#149; Hmmm...does this problem sound familiar?</p> 
+          <p class="fragment">&#149; Open a new repl.</p>
+          <p class="fragment">&#149; Give a list that contains duplicate entries, write the SEQUENCE of steps that creates a new list of only unique values </p> 
           <p class="fragment">&#149; Once you feel you have gotten the steps down...open a new repl and write them in there.</p>  
         </div>
-      </section>
+      </section> -->
 
  <!--      <section data-background="#FFF" class="text-left">
         <div class="heading">Exercise - 10min</div>
@@ -106,7 +106,95 @@
         <p>&#149; Use it to install <a href="https://packagecontrol.io/packages/SideBarEnhancements" target="_blank">SideBarEnhancements</a></p>
         <p>&#149; Enables additional commands in Sublime Text's sidebar</p>
       </section> -->
+<!-- VARIABLES -->
+      <section class="title" id="variables">
+        <h1>Variables</h1>
+      </section>
 
+      <section data-background="#FFF" class="text-left">
+        <div class="heading">Variables</div>
+          <p>&#149; Variables keep track of data in a program</p>
+          <div class="fragment">
+            <p>&#149; Variables are assigned using one of three keywords: <code class="code">var</code>, <code class="code">let</code> and <code class="code">const</code></p>
+            <p class="pad-left-lg">Never use var</p>
+            <p class="pad-left-lg"><code class="code">let</code> can be reassigned and has more specific scope.</p>
+            <p class="pad-left-lg"><code class="code">const</code> cannot be reassigned a different value once assigned</p>
+          </div>
+        </section>
+
+      <section data-background="#FFF" class="text-left">
+        <div class="heading">Variables</div>
+
+        <div class="text-smaller">
+          <p>&#149; Take care when naming variables!</p>
+          <p class="fragment">&#149; Names should reflect the data they describe</p>
+          <p class="fragment">&#149; Other naming conventions:</p>
+          <div class="pad-left-lg text-smallest fragment">
+            <p>&rArr; Names should start with a lowercase letter</p>
+            <p>&rArr; Cannot use spaces; use hyphens or underscores instead</p>
+            <p>&rArr; Better yet, use <u>camelCase</u>:</p>
+<pre><code>
+  let current_temp = 82; // NO!!!
+  let current temp = 82; // DEFINITELY NO!!!
+
+  let currentTemp = 72; // YES!!!
+
+</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section data-background="#FFF" class="text-left">
+        <div class="heading">Variables: Reassignment</div>
+
+        <div class="text-smallest">
+          <p>1. Create a variable, <code class="code">x</code>, and assign it to 2</p>
+<pre><code>
+  let x = 2;
+
+</code></pre>
+          <p>2. Perform some arithmetic on <code class="code">x</code></p>
+<pre><code>
+  x * 2
+  // 4
+
+</code></pre>
+          <p>3. What's <code class="code">x</code> now equal to?</p>
+          <div class="fragment">
+<pre><code>
+  x
+  // 2
+
+</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section data-background="#FFF" class="text-left">
+        <div class="heading">Variables: Reassignment</div>
+
+        <div class="text-smaller">
+          <p>&#149; You must <u>reassign</u> variables to change them</p>
+<pre><code>
+  let x = 2;
+  // 2
+
+  x * 2
+  // 4
+
+  x
+  // 2
+
+  // REASSIGN
+  x = x * 2
+  // 4
+
+  x
+  // 4
+
+</code></pre>
+        </div>
+      </section>
       <!-- DATA TYPES -->
       <section class="title" id="data-types">
         <h1>Data Types</h1>
@@ -154,6 +242,13 @@
               <p>Collections of related data, stored in <code class="code">[]</code>, and comma-separated</p>
               <p><code class="code">['manhattan', 'the bronx', 'queens', 'brooklyn', 'staten island']</code></p>
             </div>
+           <div class="fragment">
+            <p class="text-smaller">&#149; Objects</p>
+            <div class="text-smallest pad-left-lg">
+              <p>Collections of related data, stored as <code class="code">[]</code>key:value pairs. </p>
+              <p><code class="code">{borough: 'manhattan'}</code></p>
+            </div>
+          </div>
           </div>
         </div>
       </section>
@@ -165,11 +260,11 @@
           <p>&#149; Undefined - A variable without a value</p>
           <div class="pad-left-lg">
 <pre><code>
-  var x = 2;
+  let x = 2;
   x
   // 2
 
-  var y;
+  let y;
   y
   // undefined
 
@@ -177,7 +272,7 @@
           </div>
           <div class="fragment">
             <p>&#149; Null - Used to indicate no value</p>
-            <p class="pad-left-lg"><code class="code">var x = null;</code></p>
+            <p class="pad-left-lg"><code class="code">let x = null;</code></p>
           </div>
           <p class="fragment">&#149; Note: <code class="code">undefined</code> &ne; <code class="code">null</code> (<a href="http://stackoverflow.com/a/802371/2144912" target="_blank">more info</a>)</p>
         </div>
@@ -277,101 +372,13 @@
 </code></pre>
       </section>
 
-      <!-- VARIABLES -->
-      <section class="title" id="variables">
-        <h1>Variables</h1>
-      </section>
-
+      
       <section data-background="#FFF" class="text-left">
-        <div class="heading">Variables</div>
-          <p>&#149; Variables keep track of data in a program</p>
-          <div class="fragment">
-            <p>&#149; Variables are assigned using one of three keywords: <code class="code">var</code>, <code class="code">let</code> and <code class="code">const</code></p>
-            <p class="pad-left-lg">Never use var</p>
-            <p class="pad-left-lg"><code class="code">let</code> can be reassigned and has more specific scope.</p>
-            <p class="pad-left-lg"><code class="code">const</code> cannot be reassigned a different value once assigned</p>
-          </div>
-        </section>
-
-      <section data-background="#FFF" class="text-left">
-        <div class="heading">Variables</div>
-
-        <div class="text-smaller">
-          <p>&#149; Take care when naming variables!</p>
-          <p class="fragment">&#149; Names should reflect the data they describe</p>
-          <p class="fragment">&#149; Other naming conventions:</p>
-          <div class="pad-left-lg text-smallest fragment">
-            <p>&rArr; Names should start with a lowercase letter</p>
-            <p>&rArr; Cannot use spaces; use hyphens or underscores instead</p>
-            <p>&rArr; Better yet, use <u>camelCase</u>:</p>
-<pre><code>
-  var current_temp = 82; // NO!!!
-  var current temp = 82; // DEFINITELY NO!!!
-
-  var currentTemp = 72; // YES!!!
-
-</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <section data-background="#FFF" class="text-left">
-        <div class="heading">Variables: Reassignment</div>
-
-        <div class="text-smallest">
-          <p>1. Create a variable, <code class="code">x</code>, and assign it to 2</p>
-<pre><code>
-  var x = 2;
-
-</code></pre>
-          <p>2. Perform some arithmetic on <code class="code">x</code></p>
-<pre><code>
-  x * 2
-  // 4
-
-</code></pre>
-          <p>3. What's <code class="code">x</code> now equal to?</p>
-          <div class="fragment">
-<pre><code>
-  x
-  // 2
-
-</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <section data-background="#FFF" class="text-left">
-        <div class="heading">Variables: Reassignment</div>
-
-        <div class="text-smaller">
-          <p>&#149; You must <u>reassign</u> variables to change them</p>
-<pre><code>
-  var x = 2;
-  // 2
-
-  x * 2
-  // 4
-
-  x
-  // 2
-
-  // REASSIGN
-  x = x * 2
-  // 4
-
-  x
-  // 4
-
-</code></pre>
-        </div>
-      </section>
-      <section data-background="#FFF" class="text-left">
-          <div class="heading">Working With Strings Lab - <code class="code">15 min</code></div>
+          <div class="heading">Working With Strings Lab - <code class="code">25 min</code></div>
           <P>&#149; Complete Part 1 and 2 of <a target="_" href="https://repl.it/@jkeohan/JSD-First-Letter-Uppercase-Starter">First Letter Uppercase</a></p>
                 <div class="pad-left-lg text-smaller"
             <p>This will require the use of the following:</p>
-            <p><code class="code">.substring()</code></p>
+            <p><code class="code">.substr()</code></p>
             <p><code class="code">.toUpperCase()</code></p>
             <p><code class="code">string concatenation</code></p>
           </div>
@@ -401,7 +408,7 @@
           <p>&#149; Useful for storing a sequence of related data</p>
           <p>&#149; Declare arrays using square brackets: <code class="code">[ ]</code></p>
 <pre><code>
-  var greatActors = ['Keanu Reeves', 'Nicholas Cage', 'Tom Cruise'];
+  let greatActors = ['Keanu Reeves', 'Nicholas Cage', 'Tom Cruise'];
 
 </code></pre>
           <div class="fragment">
@@ -421,14 +428,14 @@
             <div class="fragment">
               <p>&rArr; The <code class="code">new</code> keyword</p>
 <pre><code>
-  var drinks = new Array('beer', 'coffee', 'water')
+  let drinks = new Array('beer', 'coffee', 'water')
 
 </code></pre>
             </div>
             <div class="fragment">
               <p>&rArr; Using the array literal</p>
 <pre><code>
-  var drinks = ['beer', 'coffee', 'water']
+  let drinks = ['beer', 'coffee', 'water']
 
 </code></pre>
             </div>
@@ -446,7 +453,7 @@
           <p>&#149; Use <code class="code">[index]</code> to retrieve values from an array</p>
           <p>&#149; Remember that arrays are <u>0-indexed</u></p>
 <pre><code>
-  var drinks = ['beer', 'coffee', 'water']
+  let drinks = ['beer', 'coffee', 'water']
 
   drinks[0]
   // 'beer'
@@ -454,7 +461,7 @@
   drinks[0+1]
   // 'coffee'
 
-  var x = drinks.length - 1;
+  let x = drinks.length - 1;
   drinks[x]
   // 'water'
 
@@ -473,7 +480,7 @@
           <p>&#149; It will return only the first instance found</p>
     
 <pre><code>
-  var drinks = ['beer', 'coffee', 'water']
+  let drinks = ['beer', 'coffee', 'water']
 
   //found it
   drinks.indexOf("beer")
@@ -484,7 +491,7 @@
   -1 
 
 </code></pre>
-        <p>&#149; .indexOf() can be used to remove duplicates from an array, which will be useful to know for bonus question #2 in upcoming lab</p>
+        <p>&#149; .indexOf() can be used to remove duplicates from an array</p>
               </div>
         </section>
 
@@ -493,7 +500,7 @@
 
         <p>&#149; To add a value to <u>END</u> of an array, use <code class="code">.push()</code></p>
 <pre><code>
-  var drinks = ['beer', 'coffee', 'water']
+  let drinks = ['beer', 'coffee', 'water']
 
   drinks.push('capri sun')
   // 4
@@ -510,7 +517,7 @@
 
         <p>&#149; To add a value to the <u>BEGINNING</u>, use <code class="code">.unshift()</code></p>
 <pre><code>
-  var drinks = ['beer', 'coffee', 'water']
+  let drinks = ['beer', 'coffee', 'water']
 
   drinks.unshift('tea')
   // 4
@@ -529,7 +536,7 @@
       <section data-background="#FFF" class="text-left">
         <div class="heading">Array Helper Methods</div>
 
-        <p>JavaScript provides <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods" target="_blank">tools</a> to make working with arrays easier:</p>
+        <p>JavaScript provides <a href="https://www.w3schools.com/js/js_array_methods.asp" target="_blank">tools</a> to make working with arrays easier:</p>
         <div class="pad-left-lg">
           <p>&rArr; <code class="code">.push()</code> and <code class="code">.unshift()</code></p>
           <p>&rArr; <code class="code">.shift()</code> and <code class="code">.pop()</code></p>
@@ -544,7 +551,7 @@
         <div class="text-smaller">
           <p>&#149; First, let's create an array with some values:</p>
 <pre><code>
-  var message = [];
+  let message = [];
 
   message.push(8)
   // 1
@@ -616,14 +623,14 @@
       </section>
 
       <section data-background="#FFF" class="text-left">
-          <div class="heading">Array Iteration Lab - <code class="code">15 min</code></div>
-          <P>&#149; Complete the first 4 questions in the the following repl: <a href="https://repl.it/@jkeohan/JSD-Arrays-Starter">JSD-Arrays-Starter</a></P>
-        <p>&#149; BONUS: Refactor/Reapproach "Reverse A String" using array(s) and array helper methods</p>
+          <div class="heading">Array Basics Lab - <code class="code">25 min</code></div>
+          <P>&#149; Complete the Part 1: Arrays Basics section in the following repl: <a href="https://repl.it/@jkeohan/JSD-Arrays-Starter">JSD-Arrays-Starter</a></P>
+<!--         <p>&#149; BONUS: Refactor/Reapproach "Reverse A String" using array(s) and array helper methods</p>
             <div class="pad-left-lg text-smaller"
             <p>Try using the following methods to  to accomplish this:</p>
             <p><code class="code">.split()</code>// This is a string helper method</p>
             <p><code class="code">.join() </code> // This is an array helper method</p>
-          </div>
+          </div> -->
         </section>
 
       <!-- ARRAY ITERATION -->
@@ -640,10 +647,10 @@
           <p class="fragment">&#149; We will be learning more about <code class="code">for</code> loops next class:</p>
           <div class="fragment">
 <pre><code>
-  var boroughs = ['manhattan', 'the bronx', 'queens', 'brooklyn', 'staten island'];
+  let boroughs = ['manhattan', 'the bronx', 'queens', 'brooklyn', 'staten island'];
 
-  for (var i = 0; i < boroughs.length; i++) {
-    var borough = boroughs[i]
+  for (let i = 0; i < boroughs.length; i++) {
+    let borough = boroughs[i]
     console.log(borough)
   }
 
@@ -679,10 +686,10 @@
         <div class="text-smallest">
           <p><code class="code">for</code></p>
 <pre><code>
-  var boroughs = ['manhattan', 'the bronx', 'queens', 'brooklyn', 'staten island'];
+  let boroughs = ['manhattan', 'the bronx', 'queens', 'brooklyn', 'staten island'];
 
-  for (var i = 0; i < boroughs.length; i++) {
-    var borough = boroughs[i]
+  for (let i = 0; i < boroughs.length; i++) {
+    let borough = boroughs[i]
     console.log(borough)
   }
 
@@ -690,7 +697,7 @@
           <div class="fragment">
             <p><code class="code">Array.forEach</code></p>
 <pre><code>
-  var boroughs = ['manhattan', 'the bronx', 'queens', 'brooklyn', 'staten island'];
+  let boroughs = ['manhattan', 'the bronx', 'queens', 'brooklyn', 'staten island'];
 
   boroughs.forEach(function (borough) {
     console.log(borough)
@@ -707,9 +714,9 @@
           <p><code class="code">Array.filter()</code></p>
           <p class="pad-left-lg text-smaller">&rArr; Creates a <u>new </u>array with all elements that pass the test implemented by the provided function</p>
 <pre><code>
-  var numbers = [1,2,3,4,5];
+  let numbers = [1,2,3,4,5];
 
-  var numbersLargerThanTwo = numbers.filter(function (num) {
+  let numbersLargerThanTwo = numbers.filter(function (num) {
     return num > 2
   })
 
@@ -727,9 +734,9 @@
           <p><code class="code">Array.map()</code></p>
           <p class="pad-left-lg">&rArr; Creates a new array with the results of calling a provided function on every element in this array</p>
 <pre><code>
-  var numbers = [1,2,3,4,5];
+  let numbers = [1,2,3,4,5];
 
-  var timesFive = numbers.map(function (num) {
+  let timesFive = numbers.map(function (num) {
     return num * 5
   })
 
@@ -743,8 +750,8 @@
 
         <section data-background="#FFF" class="text-left">
           <div class="heading">HW: Array Iteration - <code class="code">30min+</code></div>
-          <P>&#149; Complete questions 5 and 6 in the <a href="https://repl.it/@jkeohan/JSD-Arrays-Starter">JSD-Arrays-Starter</a> repl</P>
-            <P>&#149; There are also 2 bonus questions if your up to the challenge.</P>
+          <P>&#149; Complete Part 2: Arrays + Iteration in the <a href="https://repl.it/@jkeohan/JSD-Arrays-Starter">JSD-Arrays-Starter</a> repl</P>
+            <P>&#149; There are also additional bonus questions if your up to the challenge.</P>
         </section>
 
       <!-- END/WRAPUP -->
