@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>JSD: Class 05</title>
+<!--   <title>JSD: Class 05</title> -->
   <link rel="stylesheet" href="css/reveal.css">
   <link rel="stylesheet" href="css/general-assembly.css" id="theme">
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
@@ -30,7 +30,7 @@
     </section> -->
 
     <section class="hero condensed">
-      <h1>Class <span class="red">#05</span></h1>
+<!--       <h1>Class <span class="red">#05</span></h1> -->
       <h1 class="lesson-title">Objects and JSON</h1>
     </section>
 
@@ -309,7 +309,7 @@ else if (userChoice === paper && cpuChoice === rock) {
 
       <div class="text-smaller">
         <p class="text-smaller">&#149; Use <code class="code">for...in</code> loop to iterate through an object's enumerable properties</p>
-        <p class="text-smaller">&#149; <b>NOTE</b>: unlike arrays, objects do not maintain property order</p>
+  <!--       <p class="text-smaller">&#149; <b>NOTE</b>: unlike arrays, objects do not maintain property order</p> -->
         <div class="text-smaller">
 <pre><code>
     var person = {
@@ -346,13 +346,9 @@ else if (userChoice === paper && cpuChoice === rock) {
   Object.keys(person);
   // ["name", "age"]
 
-  Object.keys(person).forEach(function (key) {
-    var value = person[key];
-    console.log(value)
-  })
+  Object.values(person)
+  // [ 'Chandler', 29 ]
 
-  // "Chandler"
-  // 29
 
 </code></pre>
       </div>
@@ -524,7 +520,6 @@ else if (userChoice === paper && cpuChoice === rock) {
     <!-- OBJECTS LAB -->
     <section class="center">
       <h1>Objects Lab - 15min</h1>
-      <p>Open <a target="_" href="https://repl.it/@jkeohan/JSD-Constructor-Lab-Dogs">Constructor Labs Repl</a> and follow the directions to create a dog constructor.</p>
     </section>
 
     <!-- JSON -->
