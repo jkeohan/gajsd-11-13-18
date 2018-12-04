@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/general-assembly.css" id="theme">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+  <link rel="stylesheet" href="css/zenburn.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+<!--       <section class="hero condensed">
+        <h1>Hello</h1>
+        <div class="opening-instructions">
+          <p>1) Please download <a href="../materials/class08.zip" target="_blank">Class 08 Starter Code</a></p>
+          <p>2) Move the following into <code class="code">class-work</code>:</p>
+          <div class="pad-left-lg">
+            <p>&#149; <code class="code">dom_intro</code></p>
+            <p>&#149; <code class="code">list_maker</code></p>
+          </div>
+          <p>3) Solution from last week is included</p>
+        </div>
+      </section> -->
+
+      <section class="hero condensed">
+<!--         <h1>Class <span class="red">#06</span></h1> -->
+<!--         <h1>03/05/2018</h1> -->
+        <h1 class="lesson-title">Objects Continued: JSON</h1>
+      </section>
+
+<!--       <section data-background="#FFF" class="text-left">
+        <div class="heading">Announcements</div> -->
+
+ <!--        <p>&#149; Final Project</p> -->
+<!--         <div class="pad-left-lg">
+          <p>&rArr; <a href="https://docs.google.com/spreadsheets/d/1tQdE3iWuNAAWdUqyYQfctzevWaQeX11JEX3LYvH_nRU/edit#gid=437767196">Office Hours Sign Up Sheet</a></p>
+          <p> &rArr; In Class Mini Project: Feedr on 4/26</p>
+          <ul class="pad-left-lg">
+            <li>DOM Manipulation Using jQuery</li>
+            <li>Primitive Data Types, Arrays, Objects, Functions, Constructor Functions</li>
+            <li>Making Several API Calls</li>
+          </ul>
+        </div>
+      </section>  -->
+
+     <section data-background="#FFF" class="text-left">
+      <div class="heading">Agenda</div>
+      <p>&#149; <a href="#/questions">Questions\Feedback</a></p>
+      <p>&#149; <a href="#/hr">Homework Review</a></p>
+      <p>&#149; <a href="#/json">Objects Cont...JSON</a></p>
+<!--       <p>&#149; <a href="#/whiteboarding">Whiteboarding Techniques</a></p> -->
+    </section>
+
+
+      <section data-background="#FFF" class="text-left">
+         <div class="heading" id="questions">Questions\Feedback </div>
+<p class="fragment"><b>Questions...</b></p>
+        <div class="text-smaller pad-left-lg">
+          <p class="fragment">
+            <b>Q: When is it necessary to use a constructor function rather than regular objects?</b>
+          </p>
+          <p class="fragment pad-left-lg">
+            A: When you want to extent a constructor to include additional methods and properties AFTER it's been created. 
+          </p>
+          <p class="fragment">
+            <b>Q: Objects with nested objects how do they work?</b>
+          </p>
+          <p class="fragment pad-left-lg">
+            A: The same pattern to elicit a value from an object can be applied to nested objects.    
+          </p>
+          <p class="fragment">
+            <b>Q: How do we iterate over objects? </b>
+          </p>
+          <p class="fragment pad-left-lg">
+            A: There are basically two ways, one of which involves Object.keys(obj) and the other using ES6 for “for…in” loop.
+          </p>
+        </div>
+
+          <p class="fragment"><b>Feedback...</b></p>
+            <div class="text-smallest">
+              <p class="fragment pad-left-lg">&#149; This topic was a lot more straight forward than functions.</p>
+               <p class="fragment pad-left-lg">&#149; Really loved the first lab - very fun to problem solve using code. </p>
+            </div>
+      </section>
+
+      <section class="title" id="hr">
+        <h1>Homework Review</h1>
+      </section>
+<!-- 
+
+        <section data-background="#FFF" class="text-left">
+        <div class="heading">Homework Review</div>
+
+        <p>JSON is....</p>
+        <div class="fragment text-smaller pad-left-lg">
+        <p>&rArr; <a target="_" href="https://codepen.io/jkeohan/pen/wxmyaY?editors=0010">TwoSum Starter</a></p>
+        <p>&rArr; <a target="_" href="https://repl.it/@jkeohan/JSD-JSON-Lab">Working with JSON</a></code></p>
+        </div>
+      </section> -->
+
+          <!-- JSON -->
+    <section class="title" id="json">
+      <h1>JavaScript Object Notation (JSON)</h1>
+    </section>
+
+
+    <section data-background="#FFF" class="text-left">
+      <div class="heading">JSON: What is it?</div>
+
+      <div class="text-smaller">
+        <p>&#149; <b>JSON</b>: JavaScript Object Notation</p>
+        <p class="fragment">&#149; JSON !== JavaScript</p>
+        <p class="fragment">&#149; Text-based data format that is based on JS</p>
+        <p class="fragment">&#149; JSON is <u>language-independent</u>; Ruby, Python, etc. can all parse/generate JSON</p>
+        <p class="fragment">&#149; Successor to XML</p>
+        <p class="fragment">&#149; Easy for humans to read; easy for machines to parse</p>
+        <p class="fragment">&#149; Specified by <a href="https://github.com/douglascrockford/JSON-js" target="_blank">Douglas Crockford</a></p>
+      </div>
+    </section>
+
+    <section data-background="#FFF" class="text-left">
+      <div class="heading">JSON: What's it used for?</div>
+
+      <div class="text-smaller">
+        <p>&#149; JSON is used as a data-exchange format between programs</p>
+        <p>&#149; Ex: sending data from the frontend (JavaScript), to a Python-powered backend, and vice-versa</p>
+        <div class="fragment">
+        <p>&#149; Has strict conventions (unlike JS):</p>
+          <div class="pad-left-lg text-smaller">
+            <p>&rArr; Property names must be double-quoted strings: <code class="code">"name"</code> vs <code class="code">name</code></p>
+            <p>&rArr; All strings must be double-quoted: <code class="code">"name"</code> vs <code class="code">'name'</code></p>
+            <p>&rArr; No in-line comments</p>
+            <p>&rArr; Trailing commas are forbidden</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-background="#FFF" class="text-left">
+      <div class="heading">Tools to Work with JSON</div>
+
+      <div class="text-smaller">
+        <p>&#149; Here are a few tools to work with JSON</p>
+        <div>
+          <div class="pad-left-lg text-smaller">
+            <p class="fragment">&rArr; <a target="_" href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en">JSON Formatter Chrome Extension</a></p>
+            <p class="fragment">&rArr; <a target="_blank" href="https://jsonlint.com/">JSONLint</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-background="#FFF" class="text-left">
+      <div class="heading">JSON: JavaScript's <code class="code">JSON</code> Object</div>
+
+      <div class="text-smallest">
+        <p class="fragment">&#149; Like the <code class="code">Math</code> object, JavaScript has a lib for working with JSON: <code class="code">JSON</code></p>
+        <div class="fragment">
+          <p>&#149; <code class="code">JSON.stringify()</code> &rArr; Transforms JavaScript to JSON</p>
+          <div class="pad-left-lg">
+<pre><code>
+  var jsonObject = JSON.stringify({ name: 'chandler' });
+  // "{"name":"chandler"}"
+
+  typeof jsonObject
+  // string
+
+</code></pre>
+          </div>
+        </div>
+        <div class="fragment">
+          <p>&#149; <code class="code">JSON.parse()</code> &rArr; Transforms JSON to JavaScript</p>
+          <div class="pad-left-lg">
+<pre><code>
+  var javaScriptObject = JSON.parse(jsonObject);
+  // { name: "chandler" }
+
+  typeof javaScriptObject
+  // "object"
+
+</code></pre>
+          </div>
+        </div>
+      </div>
+      
+   <!--    <p class="text-smallest fragment">&#149; Let's try importing and converting data using .parse() and .stringify() using: <a href="https://codepen.io/jkeohan/pen/RQPEox?editors=0010">D3 - Scatterplot - Importing Data - Starter</a></p> -->
+    </section>
+
+    <section class="center">
+      <h1>JSON LAB 1 - 20min</h1>
+      <p>Open <a  target="_" href="https://repl.it/@jkeohan/JSD-JSON-Lab">JSON Lab Repl</code> and follow the instructions.</a></p>
+    </section>
+
+
+      <!-- INTRO TO THE DOM -->
+  <!--     <section class="title" id="json">
+        <h1>JSON</h1>
+      </section> -->
+
+<!--       <section data-background="#FFF" class="text-left">
+        <div class="heading">JSON Review</div>
+
+        <p>JSON is....</p>
+        <div class="fragment text-smaller pad-left-lg">
+        <p>&rArr; JSON is used as a data-exchange format between programs</p>
+        <p>&rArr; Property names must be double-quoted strings: <code class="code">"name"</code> vs <code class="code">name</code></p>
+           <p>&rArr; All strings must be double-quoted: <code class="code">"name"</code> vs <code class="code">'name'</code></p>
+        </div>
+      </section>
+ -->
+
+<!--     <section data-background="#FFF" class="text-left">
+      <div class="heading">JSON: JavaScript's <code class="code">JSON</code> Object</div>
+
+      <div class="text-smallest">
+        <p class="fragment">&#149; Like the <code class="code">Math</code> object, JavaScript has a lib for working with JSON: <code class="code">JSON</code></p>
+        <div class="fragment">
+          <p>&#149; <code class="code">JSON.stringify()</code> &rArr; Transforms JavaScript to JSON</p>
+          <div class="pad-left-lg">
+<pre><code>
+  var jsonObject = JSON.stringify({ name: 'chandler' });
+  // "{"name":"chandler"}"
+
+  typeof jsonObject
+  // string
+
+</code></pre>
+          </div>
+        </div>
+        <div class="fragment">
+          <p>&#149; <code class="code">JSON.parse()</code> &rArr; Transforms JSON to JavaScript</p>
+          <div class="pad-left-lg">
+<pre><code>
+  var javaScriptObject = JSON.parse(jsonObject);
+  // { name: "chandler" }
+
+  typeof javaScriptObject
+  // "object"
+
+</code></pre>
+          </div>
+        </div>
+      </div>
+      
+   
+    </section> -->
+
+        <section class="center">
+      <h1>JSON LAB 2 - 30min</h1>
+         <p class="text-smallest fragment">&#149; Open the following repl:  <a target="_" href="https://repl.it/@jkeohan/JSON-Mashable-Starter-12418">Mashable JSON Data  - Starter</a></p>
+    </section>
+
+
+      <!-- THE END -->
+      <section class="center">
+        <img src="img/main/the-end.jpg">
+      </section>
+
+      <!-- ON DECK -->
+ <!--      <section data-background="#FFF" class="text-left">
+        <div class="heading">What's On Deck</div>
+        <h4>Class #08 (of 20) - jQuery Events and JS Templating </h4>
+        <div class="pad-left-lg">
+          <p>&#149; More jQuery Events!</p>
+          <p>&#149; Javascript Templating: <a href="http://handlebarsjs.com/" target="_blank">Handlebars.js</a></p>
+        </div>
+      </section> -->
+    </div>
+  </div>
+
+  <script src="js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>
